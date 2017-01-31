@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  departure_id: 1
+  arrival_id: 1
+  flight_time: 2017-01-29 23:53:43
+  flight_duration: MyString
+
+two:
+  departure_id: 1
+  arrival_id: 1
+  flight_time: 2017-01-29 23:53:43
+  flight_duration: MyString
