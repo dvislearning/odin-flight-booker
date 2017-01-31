@@ -16,7 +16,17 @@ airports = Airport.create([
 	{code:"QPH", name: "Palapye, Botswana"},
 	{code:"MOON", name: "The Moon"}])
 
+dates = []
 
+6.times do 
+	dates << (Faker::Date.forward(365*5))
+end
+
+def generate_date_and_time(date)
+	Faker::Time.between(date.beginning_of_day, date.end_of_day, :all)
+end
+
+# Generates 5 flights for each departure/arrival airport combination 
 airports.each_with_index do |departure, departure_index|
 	depart_id = departure_index + 1
 
@@ -29,7 +39,7 @@ airports.each_with_index do |departure, departure_index|
 				departure_id: depart_id,
 				arrival_id: arr_id,
 				flight_duration: "#{rand(0..12)}hrs #{rand(0..59)} mins",
-				flight_time: Faker::Time.forward(365*5, :all))
+				flight_time: generate_date_and_time(dates.sample))
 		end
 	end
 end
