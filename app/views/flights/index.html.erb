@@ -25,9 +25,38 @@
 
 
 <% unless @flight_query.empty? %>
-	<% @flight_query.each do |flight| %>
-		<ul>
-			<%= flight.flight_time %>
-		</ul>
-	<% end %>	
+	<h3>Select A Flight</h3>
+	<table>
+		<thead>
+			<tr>
+				<th>Select</th>
+				<th>Date</th>
+				<th>Departure</th>
+				<th>Arrival</th>
+				<th>Time</th>
+			</tr>
+		</thead>
+		<%= form_tag("new_booking_path", method: "get") do %>
+			<tbody>
+				<% @flight_query.each do |flight| %>
+					<tr>
+						<td><%= radio_button_tag(:flight_id, flight.id)%> </td>
+						<td><%= flight.flight_time.strftime("%a %m-%d-%Y") %></td>
+						<td><%= flight.departure.name %></td>
+						<td><%= flight.arrival.name %></td>
+						<td><%= flight.flight_time.strftime("%I:%M %p") %></td>
+					<tr>
+				<% end %>
+			</tbody>
+			<tfoot>
+					<tr>
+						<td id="table_foot"></td>
+						<td id="table_foot"></td>
+						<td id="table_foot"></td>
+						<td id="table_foot"></td>
+						<td><%= submit_tag("Search", id: "search_button")  %></td>
+					</tr>
+			</tfoot>
+	</table><br/ >
+		<% end %>
 <% end %>

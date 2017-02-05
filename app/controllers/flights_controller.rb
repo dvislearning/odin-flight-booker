@@ -14,7 +14,7 @@ class FlightsController < ApplicationController
 
   	if params[:commit] == "Search"
   		if params[:departure_id] == params[:arrival_id]
-  			flash[:danger] = "Invalid email/password combination"
+  			flash[:danger] = "No flights found!"
   		end
   	end
   end
