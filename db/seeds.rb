@@ -23,7 +23,7 @@ dates = []
 end
 
 def generate_date_and_time(date)
-	Faker::Time.between(date.beginning_of_day, date.end_of_day, :afternoon)
+	Faker::Time.between(date.beginning_of_day, date.end_of_day, :all)
 end
 
 # Generates 5 flights for each departure/arrival airport combination 

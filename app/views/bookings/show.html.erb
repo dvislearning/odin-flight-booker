@@ -1,0 +1,44 @@
+<h1>Booking Details </h1>
+
+<h3>Flight Information</h3>
+
+<table>
+	<thead>
+		<tr>
+      		<th>Date</th>    
+			<th>Flight #</th>
+			<th>Departure</th>
+			<th>Arrival</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><%= @flight.flight_time.strftime("%a %m-%d-%Y") %></td>
+      		<td><%= @flight.id %> </td>
+			<td><%= @flight.departure.name %></td>
+			<td><%= @flight.arrival.name %></td>
+		</tr>
+	</tbody>
+</table>
+
+<h3>Passenger Information</h3>
+
+	<% passenger_count = 1 %>
+	<% @booking.passengers.each do |passenger| %>
+		<table>
+			<h4><%= "Passenger #{passenger_count}" %></h4>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Email</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><%= passenger.name %></td>
+					<td><%= passenger.email %></td>
+				</tr>
+			</tbody>
+			<% passenger_count += 1 %>
+		</table>
+	<% end %>

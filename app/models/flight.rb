@@ -1,6 +1,7 @@
 class Flight < ApplicationRecord
 	belongs_to :departure, :class_name => "Airport"
 	belongs_to :arrival, :class_name => "Airport"
+	has_many :bookings
 
 	def self.dates_available
 		flight_times = Flight.all.order(flight_time: :asc).pluck(:flight_time)

@@ -4,15 +4,15 @@
 <%= form_tag("/", method: "get") do %>
   <%= label_tag(:departure_id, "From:") %><br/ >
   <%= select_tag :departure_id, options_for_select(@user_options, 
-  @departure_id) %><br/ ><br/ >
+  @departure_id) %><br/ >
 
   <%= label_tag(:arrival_id, "To:") %><br/ >
   <%= select_tag :arrival_id, options_for_select(@user_options, 
-  @arrival_id) %><br/ ><br/ >
+  @arrival_id) %><br/ >
 
   <%= label_tag(:travel_date, "Date: ") %><br/ >
   <%= select_tag :travel_date, options_for_select(@dates, 
-  @travel_date) %>    <br/ ><br/ >
+  @travel_date) %>    <br/ >
 
   <%= label_tag(:passenger_count, "Passengers: ") %><br/ >
   <%= select_tag :passenger_count, options_for_select([1,2,3,4], 
@@ -36,7 +36,7 @@
 				<th>Time</th>
 			</tr>
 		</thead>
-		<%= form_tag("new_booking_path", method: "get") do %>
+		<%= form_tag("bookings/new", method: "get") do %>
 			<tbody>
 				<% @flight_query.each do |flight| %>
 					<tr>
@@ -54,9 +54,10 @@
 						<td id="table_foot"></td>
 						<td id="table_foot"></td>
 						<td id="table_foot"></td>
-						<td><%= submit_tag("Search", id: "search_button")  %></td>
+						<td><%= submit_tag("Continue", id: "search_button")  %></td>
 					</tr>
 			</tfoot>
+			<%= hidden_field_tag(:passenger_count, @passenger_count) %>
 	</table><br/ >
 		<% end %>
 <% end %>
