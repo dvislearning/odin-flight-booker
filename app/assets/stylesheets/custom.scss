@@ -112,6 +112,12 @@ input, textarea, select, .uneditable-input {
   @include box_sizing;
 }
 
+#home_form {
+  padding-left: 3px;
+  padding-bottom: 3px;
+  border: 3px solid black;
+}
+
 input {
   height: auto !important;
 }

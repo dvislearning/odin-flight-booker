@@ -19,14 +19,13 @@ airports = Airport.create([
 dates = []
 
 5.times do 
-	dates << (Faker::Date.forward(43))
+	dates << (Faker::Date.forward(43).beginning_of_day)
 end
 
 def generate_date_and_time(date)
 	Faker::Time.between(date.beginning_of_day, date.end_of_day, :all)
 end
 
-# Generates 5 flights for each departure/arrival airport combination 
 airports.each_with_index do |departure, departure_index|
 	depart_id = departure_index + 1
 
