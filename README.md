@@ -1,24 +1,7 @@
-# README
+# Odin Flight Booker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Odin Flight Booker is an exercise in building nested forms.  It mimicks the basic functionality of a flight booking website such as Travelocity.  Users choose a flight from a pre-populated form of available flights based on four characteristics: departure airport, arrival airport, date of flight, and number of passengers.  
 
-Things you may want to cover:
+Once a user has chosen a flight, booking information for each passenger is collected and saved into the database.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Part of The Odin Project's [Ruby on Rails Curriculum.](http://www.theodinproject.com/courses/ruby-on-rails/lessons/advanced-forms)
