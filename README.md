@@ -4,4 +4,6 @@ Odin Flight Booker is an exercise in building nested forms.  It mimicks the basi
 
 Once a user has chosen a flight, booking information for each passenger is collected and saved into the database.
 
+View in Heroku at [https://powerful-sierra-48857.herokuapp.com/](https://powerful-sierra-48857.herokuapp.com/)
+
 Part of The Odin Project's [Ruby on Rails Curriculum.](http://www.theodinproject.com/courses/ruby-on-rails/lessons/advanced-forms)
