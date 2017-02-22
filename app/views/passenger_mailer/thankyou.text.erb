@@ -1,0 +1,17 @@
+Bon Voyage!
+===============================================
+ 
+Here are the details for your upcoming flight:
+-- 
+Flight #: <%= @booking.flight.flight_time.strftime("%a %m-%d-%Y") %>
+Date: <%= @booking.flight.id %>
+Departure: <%= @booking.flight.departure.name %>
+Arrival: <%= @booking.flight.arrival.name %>
+-- 
+The following passengers are booked:
+--
+<% @booking.passengers.each do |passenger| %>
+    <%= passenger.name %>: <%= passenger.email %>
+<% end %>	
+--
+Thank you for choosing Odin Flight Booker. Have a great flight!!
